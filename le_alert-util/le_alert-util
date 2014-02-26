@@ -1,6 +1,7 @@
 import urllib2
 import json
 import sys
+import re
 
 ACCOUNT_KEY = ''
 HOST_NAME = ''
@@ -8,8 +9,12 @@ EMAIL = ''
 
 
 def setup():
-
-    get_hosts()
+    #Probably use something better then regex to validate email
+    key = re.search(".+@.+\..+",EMAIL)
+    if key is not None:
+        get_hosts()
+    else:
+        print "Not a valid email address."
 
 
 def get_hosts():
