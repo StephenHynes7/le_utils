@@ -1,0 +1,27 @@
+Deprecated | /DEPRECATION WARNING: 
+App crashed | /code=H10 desc=App crashed
+Backlog too deep | /code=H11 desc=Backlog too deep
+Request timeout | /code=H12 desc=Request timeout
+Connection closed w/o response| /code=H13 desc=Connection closed without response
+No web processes running| /code=H14 desc=No web processes running
+Idle connection|/code=H15 desc=Idle connection
+Redirect to herokuapp.com| /code=H16 desc=Redirect to herokuapp.com
+Poorly formatted HTTP response| /code=H17 desc=Poorly formatted HTTP response
+Request Interrupted| /code=H18 desc=Request Interrupted.* sock=backend
+Backend connection timeout| /code=H19 desc=Backend connection timeout
+App boot timeout|/code=H20 desc=App boot timeout
+Backend connection refused| /code=H21 desc=Backend connection refused
+Connection limit reached| /code=H22 desc=Connection limit reached
+Maintenance mode|/code=H80 desc=Maintenance mode
+Heroku Platform error|/code=H99 desc=Platform error
+Boot timeout|/Error R10 \(Boot timeout\)
+Bad bind|/Error R11 \(Bad bind\)
+Exit timeout|/Error R12 \(Exit timeout\)
+Attach error|/Error R13 \(Attach error\)
+Memory quota exceeded|/Error R14 \(Memory quota exceeded\)
+Memory quota vastly exceeded| /Error R15 \(Memory quota vastly exceeded\)
+Detached|/Error R16 \(Detached\)
+Drain buffer overflow|/Error L10 \(Drain buffer overflow\)
+Tail buffer overflow|/Error L11 \(Tail buffer overflow\)
+PostgreSQL error|/ postgres - - .*ERROR:  /
+
