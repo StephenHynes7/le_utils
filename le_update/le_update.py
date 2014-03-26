@@ -14,7 +14,7 @@ def setVars():
 
 def get_hosts(key):
 	log_keys = []
-	url = 'http://api.logentries.com/'+ACCOUNT_KEY+'/hosts/'+key+'/'
+	url = 'https://api.logentries.com/'+ACCOUNT_KEY+'/hosts/'+key+'/'
 	response = urllib2.urlopen(url).read()
 	hosts = json.loads(response)
 	for log in hosts['list']:
