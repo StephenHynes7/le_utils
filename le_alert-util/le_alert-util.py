@@ -19,7 +19,7 @@ def setup():
 
 def get_hosts():
     log_keys = []
-    url = 'http://api.logentries.com/' + ACCOUNT_KEY + '/hosts/' + HOST_NAME + '/'
+    url = 'https://api.logentries.com/' + ACCOUNT_KEY + '/hosts/' + HOST_NAME + '/'
     response = urllib2.urlopen(url).read()
     hosts = json.loads(response)
     for log in hosts['list']:
