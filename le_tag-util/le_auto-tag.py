@@ -10,7 +10,7 @@ LOG_KEYS=[]
 
 
 def get_account_data():
-	response = urllib2.urlopen('http://api.logentries.com/'+ACCOUNT_KEY+'/hosts/').read()
+	response = urllib2.urlopen('https://api.logentries.com/'+ACCOUNT_KEY+'/hosts/').read()
 	hosts = json.loads(response)
 	search_hosts(hosts['list'])
 	open_file()
@@ -19,7 +19,7 @@ def search_hosts(hosts):
 	print "finding hosts"
 	for host in hosts:
 		print host['name']
-		url = 'http://api.logentries.com/'+ACCOUNT_KEY+'/hosts/'+host['name']+'/'
+		url = 'https://api.logentries.com/'+ACCOUNT_KEY+'/hosts/'+host['name']+'/'
 		url = url.replace(' ','%20')
 		response = urllib2.urlopen(url).read()
 		logs = json.loads(response)
