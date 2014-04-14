@@ -1,4 +1,4 @@
-# le_update_alerts
+# le_disable_alerts
 
 Disables all alerts. Useful when load testing.
 
