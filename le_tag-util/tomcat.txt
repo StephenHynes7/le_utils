@@ -1,0 +1,5 @@
+Null Pointer Exception | /NullPointerException/
+High CPU and Disk Load | load>80 AND disk>=80
+JDBC Exception | /MySQLNonTransientConnectionException/
+Out of Memory Error | /java.lang.OutOfMemoryError/
+Zip Error | java.util.zip.ZipException
