@@ -4,6 +4,6 @@ Disables all alerts. Useful when load testing.
 
 ## Usage
 
-    python2 le_update_alerts.py ACCOUNT_KEY
+    python2 le_disable_alerts.py ACCOUNT_KEY
 
 You can find your Logentries Account Key here https://logentries.com/doc/accountkey/
