@@ -1,0 +1,5 @@
+500 server error | /HTTP\\/1\\.[01]\\\"\\s+5[0-9]{2}/
+400 server error | /HTTP\\/1\\.[01]\\\"\\s+4[0-9]{2}/
+204 server error | /HTTP\\/1\\.[01]\\\"\\s+204/
+Attempting to access forbidden folder | /directory index of .* is forbidden
+Possible SQL injection | /^\s*(SELECT|DELETE)/

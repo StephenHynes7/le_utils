@@ -1,0 +1,4 @@
+Microsoft JET database engine error | /80004005/
+ASP.net was not completly installed with IIS | /Error 500.21/
+Tried to load a 32-bit app onto a 64bit System | /0x8007000B/
+W3wp.exe has crashed | /0xc00000fd/
