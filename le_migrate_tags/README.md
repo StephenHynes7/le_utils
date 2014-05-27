@@ -14,7 +14,7 @@ Usage:
 ------
 
 
-Tu run the script:
+To run the script:
 
 Download it from github and save it in a directory. 
 
