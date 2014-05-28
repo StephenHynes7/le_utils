@@ -20,4 +20,4 @@ From the terminal run the following:
 Further Details:
 ----
 
-The script will follow all of the *.log files in the local directory. If you want to follow all of the *.log files in the subdirectories you can do it by deleting    the option `-maxdepth 1` in the **find** command in the script.
+The script will follow all of the \*.log files in the local directory. If you want to follow all of the \*.log files in the subdirectories you can do it by deleting    the option `-maxdepth 1` in the **find** command in the script.
