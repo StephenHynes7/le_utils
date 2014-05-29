@@ -18,8 +18,6 @@ class LeClient(object):
         }
         req = urllib2.Request('https://api.logentries.com/v2/hooks')
         req.add_header('Content-Type', 'application/json')
-                       # This is what I expect to receive (Json)
-        # Ask Peter/Stephen to explain
         response = urllib2.urlopen(req, json.dumps(request))
         hooks = json.loads(response.read())
         return hooks['hooks']
@@ -49,17 +47,23 @@ class LeClient(object):
         return actions['actions']
 
     def create_json_object(self):
-        json_object_app = {}
+        json_object = {}
         print 'Starting to Export Hook Objects'
-        json_object_app["Hooks"] = self.get_hook()
+        json_object["Hooks"] = self.get_hook()
+        for hook in json_object["Hooks"]:
+        	hook['account_id']=''
         print 'Finished Exporting Hook Objects'
         print 'Starting to Export Tag Objects'
-        json_object_app["Tags"] = self.get_tags()
+        json_object["Tags"] = self.get_tags()
+        for tag in json_object["Tags"]:
+        	tag['account_id']=''
         print 'Finished Exporting Tag Objects'
         print 'Starting to Export Action Objects'
-        json_object_app["Actions"] = self.get_actions()
+        json_object["Actions"] = self.get_actions()
+        for act in json_object["Actions"]:
+        	act['account_id']=''
         print 'Finished Exporting Tag Objects'
-        return json.dumps(json_object_app)
+        return json.dumps(json_object)
 
     def upload_hook(self, hook, actions, tags):
         print 'Creating %s Tag/Alert' % hook['name']
