@@ -33,6 +33,13 @@ From the Terminal run the following:
 Where ACCOUNT\_2_KEY is the Key of the account where you want to import the Tags/Alerts
 
 
+Cloudtrail:
+------
+
+You can add Cloudtrail tags by downloading the cloudtrail-tags.txt from this repository and running the following command.
+
+	python le_migrate_tags.py ACCOUNT_KEY import cloudtrail-tags.txt 
+
 Help:
 -----
 

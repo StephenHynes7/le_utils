@@ -1,0 +1,12 @@
+Slow Peformance | service>500 AND /router.*api
+Badge Earned/Posted | /:: earned badge id
+Crave Button Push | /router.*random.json
+New App Visit | /AppVisitLoggingMiddleware :: done creating new app visit
+New User Install | /FacebookMiddleware.process_request :: Creating new user in database
+Traceback | Traceback(most recent call last)
+User Uninstall | deauthorize :: successfully uninstalled
+Ginzu-Created New User | /Created new user
+Ginzue- Keyword message received | /Message from user is a keyword
+Ginzu- Response SMS Received | /Message from user is a response to
+Ginzu- SMS Scheduled | /successfully queued to send/i
+Ginzu- User Unsubscribed | /Unscribed user
