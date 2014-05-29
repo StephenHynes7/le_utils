@@ -18,8 +18,6 @@ class LeClient(object):
         }
         req = urllib2.Request('https://api.logentries.com/v2/hooks')
         req.add_header('Content-Type', 'application/json')
-                       # This is what I expect to receive (Json)
-        # Ask Peter/Stephen to explain
         response = urllib2.urlopen(req, json.dumps(request))
         hooks = json.loads(response.read())
         return hooks['hooks']
