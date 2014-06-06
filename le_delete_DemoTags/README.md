@@ -2,7 +2,7 @@ le_delete_DemoTags
 -------------------
 -------------------
 
-Script to migrate all the DemoTag when a new account is created
+Script to delete all the DemoTag when a new account is created
 
 Usage:
 -----
