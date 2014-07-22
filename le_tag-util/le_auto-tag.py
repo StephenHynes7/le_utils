@@ -86,6 +86,7 @@ def create_tag(sn):
 		'limit_count': 0,
 		'limit_range': 'day',
 		'schedule': [],
+		'enabled': False,
 		'type': 'tagit',
 		'args': {
 			'sn': sn,
@@ -106,7 +107,7 @@ def create_hook(name, regex ,tag_id):
 	request = {
 		'name': name,
 		'triggers': regex,
-		'sources':LOG_KEYS,
+		'sources':[],
 		'groups': [],
 		'actions': [
 			tag_id

@@ -1,0 +1,23 @@
+Win Startup | 512 OR 4608
+Win Shutdown | 513 OR 4609
+Win Audit Log Cleared | 517 OR 1102
+Win Logon | 528 OR 4624 OR 540
+Win Logon Failure | 529 OR 53[1-7] OR 539 OR 4625
+Win Logoff | 538 OR 4634
+Win Object Access | 560 OR 563 OR 565 OR 566 OR 4656 OR 4659 OR 4661 OR 4662
+Win Audit Policy Change | 612 OR 4719
+Win User Created | 624 OR 4720
+Win User Enabled | 626 OR 4722
+Win Change Password | 627 OR 4723
+Win Account PWD Set | 628 OR 4724
+Win User Disabled | 629 OR 4725
+Win User Deleted | 630 OR 4726
+Win Account Changed | 642 OR 4738
+Win Account Locked Out | 644 OR 4740
+Win Account Success | 672 OR 680 OR 4772 OR 4768
+Win Account Failed | 675 OR 681 OR 4771
+Win Session Reconnected | 682 OR 4778
+Win Session Disconnected | 683 OR 4779
+Win Domain Policy Changed | 643 OR 4739
+Win Computer Account Created | 645 OR 4741
+Win Computer Account Deleted | 647 OR 4743
