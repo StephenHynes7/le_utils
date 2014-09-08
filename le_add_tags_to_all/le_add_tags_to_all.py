@@ -1,24 +1,25 @@
 import urllib2
+import urllib
 import json
 import sys
-import copy
 
 ACCOUNT_KEY = ''
-TAGS=[]
+TAGS = []
+log_keys = []
 
-log_keys=[]
 
 def get_logs():
-    url = 'http://api.logentries.com/'+ ACCOUNT_KEY + '/hosts/'
+    url = 'https://api.logentries.com/' + ACCOUNT_KEY + '/hosts/'
     response = urllib2.urlopen(url).read()
     hosts = json.loads(response)
+    print 'Getting log keys'
     for host in hosts['list']:
-        url2 = 'http://api.logentries.com/'+ ACCOUNT_KEY + '/hosts/' + host['name'] + '/'
+        host_name = urllib.quote_plus(host['name'])
+        url2 = 'https://api.logentries.com/' + ACCOUNT_KEY + '/hosts/' + host_name + '/'
         response2 = urllib2.urlopen(url2).read()
         logs = json.loads(response2)
         for log in logs['list']:
             log_keys.append(log['key'])
-    print log_keys	
     if log_keys:
         print "getting tags"
         get_tags()
@@ -34,25 +35,30 @@ def get_tags():
     req.add_header('Content-Type', 'application/json')
     response = urllib2.urlopen(req, json.dumps(request))
     tags = json.loads(response.read())
+
     for tag in tags['hooks']:
-	if tag['name'] in TAGS:
-           print tag 
-           update_tag(tag)
+        print TAGS
+        if not TAGS:
+            print 'Adding %s to logs', tag
+            update_tag(tag)
+        elif tag['name'] in TAGS:
+            print tag
+            update_tag(tag)
+
 
 def update_tag(tag):
     request = {
         'request': 'update',
         'account': ACCOUNT_KEY,
         'acl': ACCOUNT_KEY,
-	'id': tag['id'],
-	'name': tag['name'],
-	'triggers' : tag['triggers'],
-	'sources': log_keys,
-	'groups': tag['groups'],
-	'actions': tag['actions']
+        'id': tag['id'],
+        'name': tag['name'],
+        'triggers': tag['triggers'],
+        'sources': log_keys,
+        'groups': tag['groups'],
+        'actions': tag['actions']
     }
 
-    print json.dumps(request)
     req = urllib2.Request('https://api.logentries.com/v2/hooks')
     req.add_header('Content-Type', 'application/json')
     response = urllib2.urlopen(req, json.dumps(request))
@@ -62,5 +68,9 @@ def update_tag(tag):
 
 if __name__ == '__main__':
     ACCOUNT_KEY = sys.argv[1]
-    TAGS=sys.argv[2:]
+    print ACCOUNT_KEY
+    try:
+        TAGS = sys.argv[2:]
+    except NameError:
+        TAGS = []
     get_logs()
