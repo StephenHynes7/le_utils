@@ -16,3 +16,7 @@ You can find your Logentries Account Key here https://logentries.com/doc/account
 A sample command would be:
 
     python le_add_tags_to_all.py 1234 Error Exception
+
+If no tag is specified all tags will be added to all logs in your Account.
+
+     python le_add_tags_to_all.py 1234
