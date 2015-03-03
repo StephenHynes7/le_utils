@@ -9,9 +9,8 @@ EMAIL = ''
 
 
 def setup():
-    #Probably use something better then regex to validate email
-    key = re.search(".+@.+\..+",EMAIL)
-    if key is not None:
+    # TODO: Probably use something better then regex to validate email
+    if all(re.search(".+@.+\..+", email) is not None for email in EMAIL_LIST): 
         get_hosts()
     else:
         print "Not a valid email address."
@@ -43,7 +42,7 @@ def retrieve_actions(log_keys):
         try:
             if action['args']['direct']:
                 print action['args']['direct']
-                action['args']['direct'] = EMAIL
+                action['args']['direct'] = ','.join(EMAIL_LIST)
                 update_action(action)
         except KeyError, e:
                 print ""
@@ -73,5 +72,5 @@ def update_action(action):
 if __name__ == '__main__':
     ACCOUNT_KEY = sys.argv[1]
     HOST_NAME = sys.argv[2]
-    EMAIL = sys.argv[3]
+    EMAIL_LIST = sys.argv[3:]
     setup()
