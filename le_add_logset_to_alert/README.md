@@ -18,5 +18,8 @@ To run the script:
 
 A sample command would be:
 
-    python le_add_logset_to_alert.py XXXX MyAlert MyLogSet
+    python le_add_logset_to_alert.py XXXX MyAlert HOST
 
+or
+
+    python le_add_logset_to_alert.py XXXX MyAlert HOST/LOGSET
