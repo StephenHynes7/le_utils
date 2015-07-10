@@ -13,17 +13,22 @@ def main(account_key, alert_name, log_set_name):
 
 
 def get_log_set_keys(account_key, log_set_name):
-    url = 'https://api.logentries.com/%s/hosts/%s' %(account_key, log_set_name)
-    host = {}
-    logs = []
+    url = 'https://api.logentries.com/%s/hosts/%s' % (account_key, log_set_name)
+    log_sets = {}
+    keys = []
     try:
         response = urllib2.urlopen(url).read()
-        host = json.loads(response)
-        for logkey in host['logs']:
-            logs.append(logkey['key'])
+        log_sets = json.loads(response)
+        if 'logs' in log_sets:
+            # log_sets is all logs of a host
+            for logkey in log_sets['logs']:
+                keys.append(logkey['key'])
+        else:
+            # log_sets is the specific log of a host
+            keys.append(log_sets['key'])
     except Exception, e:
         raise e
-    return logs
+    return keys
 
 
 def get_alert(account_key, alert_name):
