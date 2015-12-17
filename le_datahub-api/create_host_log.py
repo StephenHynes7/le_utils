@@ -31,7 +31,7 @@ def create_log(host_key):
         'request': 'new_log',
         'user_key': ACCOUNT_KEY,
         'host_key': host_key,
-        'name': 'MyLog'),
+        'name': 'MyLog',
         'type': '',
         'filename': '',
         'retention': '-1',
